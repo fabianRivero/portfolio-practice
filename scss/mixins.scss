@@ -1,0 +1,17 @@
+@use "variables" as *;
+
+@mixin underline(
+  $width: 100px,
+  $height: 2px,
+  $color: $green,
+  $margin-top: 8px
+) {
+  &::after {
+    content: "";
+    display: block;
+    width: $width;
+    height: $height;
+    margin-top: $margin-top;
+    background-color: $color;
+  }
+}

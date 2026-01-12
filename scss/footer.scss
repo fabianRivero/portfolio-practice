@@ -1,0 +1,258 @@
+@use "variables" as *;
+@use "mixins" as *;
+@use "breakpoints" as *;
+
+body{
+    footer {
+        padding: 40px 20px;
+        background-color: $footer-background;
+        display: flex;
+        flex-direction: column;
+
+        .contact {
+            padding-top: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            div {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                h2 {
+                   font-size: 40px;
+                    margin-bottom: 0;
+                }
+                p {
+                    line-height: 26px;
+                    text-align: center;
+                }
+            }
+
+            form {
+                display: flex;
+                flex-direction: column;
+                gap: 5px;   
+                
+                .field {
+                    position: relative;
+
+                    textarea {
+                    height: 80px;
+                    margin-bottom: 45px;
+                    }
+
+                    input, textarea {
+                    width: 100%;
+                    border: 0;
+                    background: none;
+                    border-bottom: 1px solid white;
+                    padding: 20px 0px;
+                    text-indent: 20px;
+                    outline: none;
+                    &::placeholder {
+                        color: $text-color;
+                        font-size: 15px;
+                    }
+
+                    &:valid:not(:placeholder-shown) {
+                        border-bottom: 1px solid $green;
+                    }
+
+                    &:invalid:not(:placeholder-shown) {
+                        border-bottom: 1px solid $invalid-color;
+                        background-image: url("../icons/attention-sign.svg");
+                        background-repeat: no-repeat;
+                        background-position: right 10px center;
+                        background-size: 18px;
+                    }
+                }
+
+                &:has(input:invalid:not(:placeholder-shown))::after,
+                &:has(textarea:invalid:not(:placeholder-shown))::after {
+                    content: "Sorry, invalid format here";
+                    position: absolute;
+                    right: 0;
+                    bottom: -18px;
+                    font-size: 12px;
+                    color: $invalid-color;
+                }
+
+                }
+                button {
+                    border: none;
+                    background: none;
+                    color: white;
+                    font-size: 15px;
+                    font-weight: bold;
+                    letter-spacing: 3px;
+                    align-self: flex-end;
+                    cursor: pointer;
+
+                    &:hover{
+                        color: $green;
+                    }
+
+                    @include underline(
+                        $width: 154px,
+                    )
+                }
+            }
+        }
+
+        .header-footer {
+            &::before {
+                content: "";
+                margin-bottom: 15px;
+                left: 2.5%;
+                bottom: 0;
+                width: 95%;
+                height: 2px;
+                background: white;
+            }
+        }
+
+        @include breakpoint($bp-sm){
+            .contact {
+                padding-top: 0px;
+                width: 70%;
+                align-self: center;
+                h2 {
+                    font-size: 40px;
+                    margin-bottom: 0;
+                }
+                p {
+                    line-height: 26px;
+                    text-align: center;
+                }
+
+                form {
+                    display: flex;
+                    flex-direction: column;
+                    width: 100%;
+                    gap: 5px;           
+
+                    input, textarea {
+                        border: 0;
+                        background: none;
+                        border-bottom: 1px solid white;
+                        padding: 20px 0px;
+                        text-indent: 20px;
+                        &::placeholder {
+                            color: $text-color;
+                            font-size: 15px;
+                        }
+                    }
+
+                    textarea {
+                        height: 80px;
+                        margin-bottom: 45px;
+                    }
+
+                    button {
+                        border: none;
+                        background: none;
+                        color: white;
+                        font-size: 15px;
+                        font-weight: bold;
+                        letter-spacing: 3px;
+                        align-self: flex-end;
+                        cursor: pointer;
+                        @include underline(
+                            $width: 154px,
+                        )
+                    }
+                }
+            }
+
+            .header-footer {
+                flex-direction: column;
+                &::before {
+                    content: "";
+                    margin-bottom: 15px;
+                    left: 2.5%;
+                    bottom: 0;
+                    width: 100%;
+                    height: 2px;
+                    background: white;
+                }
+
+                div {
+                    width: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                }
+            }
+        }
+
+        @include breakpoint($bp-sm){
+            padding: 20px 120px;
+            .contact {
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                gap: 10vw;
+
+                div {
+                    align-items: center;
+
+                    h2 {
+                        font-size: 55px;
+                    }
+
+                    p {
+                        text-align: center;
+                    }
+                }
+
+                form {
+                    textarea {
+                        height: 100px;
+                    }
+                }
+            }
+
+            .header-footer {
+                &::before {
+                    margin-bottom: 15px;
+                    left: 2.5%;
+                    bottom: 0;
+                    width: 90vw;
+                    height: 2px;
+                    background: white;
+                }
+            }
+        }
+
+        @include breakpoint($bp-md){
+            padding: 20px 45px;
+            .contact {
+                flex-direction: row;
+                justify-content: space-between;
+                width: 100%;
+                gap: 10vw;
+                align-items: start;
+
+                div {
+                    align-items: start;
+
+                    h2 {
+                        font-size: 45px;
+                    }
+
+                    p {
+                        text-align: start;
+                    }
+                }
+
+                form {
+                    margin-top: 35px;
+                    textarea {
+                        height: 60px;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,210 @@
+.projects {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 15px;
+}
+.projects:nth-last-child::after {
+  content: "";
+  width: 0%;
+  height: 0px;
+}
+.projects header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.projects header h2 {
+  font-size: 40px;
+}
+.projects header a {
+  letter-spacing: 2px;
+  cursor: pointer;
+}
+.projects header a::after {
+  content: "";
+  display: block;
+  width: 115px;
+  height: 2px;
+  margin-top: 8px;
+  background-color: #4EE1A0;
+}
+.projects article {
+  width: 100%;
+  padding-bottom: 20px;
+}
+.projects article .nav-overlay {
+  display: none;
+}
+.projects article .nav-mobile {
+  display: block;
+}
+.projects article img {
+  width: 100%;
+}
+.projects article h4 {
+  margin-top: 20px;
+  font-size: 25px;
+  margin-bottom: 0;
+  order: 2;
+}
+.projects article ul {
+  margin-bottom: 35px;
+  display: flex;
+  padding: 0;
+  gap: 20px;
+  order: 3;
+}
+.projects article ul li {
+  font-size: 18px;
+}
+.projects article .project-image {
+  order: 1;
+}
+.projects article .nav-container {
+  order: 4;
+  position: static;
+  opacity: 1;
+  pointer-events: auto;
+  background: none;
+  margin-top: 10px;
+}
+.projects article .nav-container nav {
+  display: flex;
+  flex-direction: row;
+  gap: 25px;
+}
+.projects article .nav-container nav a {
+  letter-spacing: 2px;
+}
+.projects article .nav-container nav a::after {
+  content: "";
+  display: block;
+  width: 130px;
+  height: 2px;
+  margin-top: 10px;
+  background-color: #4EE1A0;
+}
+.projects article .nav-container nav a:nth-of-type(2)::after {
+  content: "";
+  display: block;
+  width: 100px;
+  height: 2px;
+  margin-top: 10px;
+  background-color: #4EE1A0;
+}
+@media (min-width: 640px) {
+  .projects {
+    padding: 30px 15px;
+  }
+  .projects .projects-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5%;
+  }
+  .projects .projects-container article {
+    width: 47%;
+    padding-bottom: 40px;
+  }
+  .projects .projects-container article h4 {
+    margin-top: 10px;
+    font-size: 19px;
+    margin-bottom: 0;
+  }
+  .projects .projects-container article ul {
+    margin-bottom: 35px;
+    display: flex;
+    padding: 0;
+    gap: 20px;
+  }
+  .projects .projects-container article ul li {
+    font-size: 18px;
+  }
+  .projects .projects-container article nav {
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
+  }
+  .projects .projects-container article nav a {
+    letter-spacing: 2px;
+  }
+  .projects .projects-container article nav a::after {
+    content: "";
+    display: block;
+    width: 130px;
+    height: 2px;
+    margin-top: 10px;
+    background-color: #4EE1A0;
+  }
+  .projects .projects-container article nav a:nth-of-type(2)::after {
+    content: "";
+    display: block;
+    width: 100px;
+    height: 2px;
+    margin-top: 10px;
+    background-color: #4EE1A0;
+  }
+}
+@media (min-width: 1024px) {
+  .projects {
+    padding: 20px 40px;
+    padding-bottom: 200px;
+  }
+  .projects header a {
+    padding-right: 10px;
+  }
+  .projects .projects-container {
+    justify-content: center;
+  }
+  .projects .projects-container article {
+    width: 47%;
+    padding: 0;
+    margin: 0;
+  }
+  .projects .projects-container article .nav-mobile {
+    display: none;
+  }
+  .projects .projects-container article .nav-overlay {
+    display: flex;
+  }
+  .projects .projects-container article ul {
+    padding: 0;
+    margin: 0;
+    margin-top: 15px;
+  }
+  .projects .projects-container .project-image {
+    position: relative;
+    overflow: hidden;
+  }
+  .projects .projects-container .project-image img {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 0;
+  }
+  .projects .projects-container .project-image .nav-overlay {
+    position: absolute;
+    margin: 0;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.6);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+  }
+  .projects .projects-container .project-image .nav-overlay nav {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  .projects .projects-container .project-image:hover .nav-overlay {
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
+
+/*# sourceMappingURL=projects.css.map */

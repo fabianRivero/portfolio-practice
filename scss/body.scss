@@ -1,0 +1,178 @@
+@use "variables" as *;
+@use "mixins" as *;
+@use "breakpoints" as *;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+    background-color: $background;
+    color: $text-color;
+    font-family: "Space Grotesk", sans-serif;
+
+    .right-waves-desktop, .left-waves2-desktop {
+        display: none;
+    }
+
+    .background-image {
+        position: absolute;
+        z-index: -1;
+
+        &.half-circle {
+            top: 300px;
+            right: 0;   
+            z-index: 2;         
+        }
+
+        &.circle {
+            display: none;
+        }
+
+        &.left-waves1 {
+            left: -8px;
+            margin-top: 50px;
+        }
+
+        &.left-waves1-desktop {
+            display: none;
+        }
+
+        &.right-waves {
+            right: -8px;
+            top: -60px;
+            transform: scaleX(-1);
+        }
+
+        &.left-waves2 {
+            left: -20px;
+            bottom: 77px;
+            z-index: 2;
+        }
+    }
+
+    a:hover {
+        color: $green;
+    }
+
+    a, h3 {
+        text-decoration: none;
+        color: white;
+        font-weight: bold;
+        @include underline(
+            $width: 120px,
+            $margin-top: 11px,
+        );
+    }
+
+    h1, h2, h3, h4, .tech-title {
+        color: white;
+    }
+
+    main section {
+        position: relative;
+        padding: 60px 0px;
+        
+        &::after {
+            content: "";
+            position: absolute;
+            left: 2.5%;
+            bottom: 0;
+            width: 95%;
+            height: 2px;
+            background: white;
+        }
+
+        &:last-of-type::after {
+            display: none;
+        }
+    }
+
+    ul {
+        list-style: none;
+    }
+
+    input, textarea {
+        color: $text-color;
+    }
+
+    @include breakpoint($bp-sm){
+
+        .background-image {
+            &.left-waves2 {
+                left: -110px;
+                bottom: 10px;
+            }
+        }
+
+        main section {
+            &::after {
+                width: 0%;
+                height: 0px;
+            }
+
+            &:first-of-type::after {
+                content: "";
+                position: absolute;
+                left: 2.5%;
+                bottom: 0;
+                width: 95%;
+                height: 2px;
+                background: white;
+            }
+        }
+    }
+
+    @include breakpoint($bp-md){
+        .right-waves, .left-waves2 {
+           display: none;
+        }
+
+        .right-waves-desktop, .left-waves2-desktop {
+           display: block;
+           z-index: 2;
+        }
+
+        .right-waves-desktop {
+            transform: scaleX(-1);
+            right: -200px;
+            top: -80px;
+        }
+
+        .left-waves2-desktop {
+            left: -300px;
+            bottom: 30px;
+        }
+
+        main section {
+            &:first-of-type::after {
+                left: 4%;
+                bottom: 0;
+                width: 90%;
+                height: 1px;
+            }
+        }
+
+        .background-image {
+            &.half-circle, &.left-waves1, .right-waves, .left-waves2 {
+                display: none;
+            }
+
+            &.left-waves1-desktop{
+                display: block;
+                width: 310px;
+                position: absolute;
+                left: 0;
+                top: 90px;
+            }
+
+            &.circle {
+                display: block;
+                position: absolute;
+                right: 330px;
+                top: 330px;
+                z-index: 2;
+            }
+        }
+    }
+}

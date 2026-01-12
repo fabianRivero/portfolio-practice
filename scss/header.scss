@@ -1,0 +1,59 @@
+@use "breakpoints" as *;
+@use "variables" as *;
+
+.header-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+    gap: 20px;
+
+    span {
+        font-size: 25px;
+        font-weight: bold;
+        color: white;
+    }
+
+    nav {
+        display: flex;
+        gap: 30px;
+
+        a{
+            color: white;
+        
+            &:hover {
+               color: $green;
+            }
+
+            &::after {
+                width: 0;
+            }
+        }
+    }
+
+    @include breakpoint($bp-sm) {
+        &.top {
+            flex-direction: row;
+            justify-content: space-between;
+            padding: 10px 20px;
+            padding-top: 0;
+            position: absolute;
+            width: 90%;
+            z-index: 3;
+            nav {
+                margin-top: 20px;
+            }
+        }
+    }
+
+    @include breakpoint($bp-md) {
+        &.top {
+            width: 100%;
+            margin-left: 60px;
+
+            nav {
+                margin-right: 215px;
+            }
+        }
+    }
+}

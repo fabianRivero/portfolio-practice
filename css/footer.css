@@ -1,0 +1,230 @@
+body footer {
+  padding: 40px 20px;
+  background-color: #242424;
+  display: flex;
+  flex-direction: column;
+}
+body footer .contact {
+  padding-top: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+body footer .contact div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+body footer .contact div h2 {
+  font-size: 40px;
+  margin-bottom: 0;
+}
+body footer .contact div p {
+  line-height: 26px;
+  text-align: center;
+}
+body footer .contact form {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+body footer .contact form .field {
+  position: relative;
+}
+body footer .contact form .field textarea {
+  height: 80px;
+  margin-bottom: 45px;
+}
+body footer .contact form .field input, body footer .contact form .field textarea {
+  width: 100%;
+  border: 0;
+  background: none;
+  border-bottom: 1px solid white;
+  padding: 20px 0px;
+  text-indent: 20px;
+  outline: none;
+}
+body footer .contact form .field input::placeholder, body footer .contact form .field textarea::placeholder {
+  color: #D9D9D9;
+  font-size: 15px;
+}
+body footer .contact form .field input:valid:not(:placeholder-shown), body footer .contact form .field textarea:valid:not(:placeholder-shown) {
+  border-bottom: 1px solid #4EE1A0;
+}
+body footer .contact form .field input:invalid:not(:placeholder-shown), body footer .contact form .field textarea:invalid:not(:placeholder-shown) {
+  border-bottom: 1px solid #FF6F5B;
+  background-image: url("../icons/attention-sign.svg");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 18px;
+}
+body footer .contact form .field:has(input:invalid:not(:placeholder-shown))::after, body footer .contact form .field:has(textarea:invalid:not(:placeholder-shown))::after {
+  content: "Sorry, invalid format here";
+  position: absolute;
+  right: 0;
+  bottom: -18px;
+  font-size: 12px;
+  color: #FF6F5B;
+}
+body footer .contact form button {
+  border: none;
+  background: none;
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+  letter-spacing: 3px;
+  align-self: flex-end;
+  cursor: pointer;
+}
+body footer .contact form button:hover {
+  color: #4EE1A0;
+}
+body footer .contact form button::after {
+  content: "";
+  display: block;
+  width: 154px;
+  height: 2px;
+  margin-top: 8px;
+  background-color: #4EE1A0;
+}
+body footer .header-footer::before {
+  content: "";
+  margin-bottom: 15px;
+  left: 2.5%;
+  bottom: 0;
+  width: 95%;
+  height: 2px;
+  background: white;
+}
+@media (min-width: 640px) {
+  body footer .contact {
+    padding-top: 0px;
+    width: 70%;
+    align-self: center;
+  }
+  body footer .contact h2 {
+    font-size: 40px;
+    margin-bottom: 0;
+  }
+  body footer .contact p {
+    line-height: 26px;
+    text-align: center;
+  }
+  body footer .contact form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 5px;
+  }
+  body footer .contact form input, body footer .contact form textarea {
+    border: 0;
+    background: none;
+    border-bottom: 1px solid white;
+    padding: 20px 0px;
+    text-indent: 20px;
+  }
+  body footer .contact form input::placeholder, body footer .contact form textarea::placeholder {
+    color: #D9D9D9;
+    font-size: 15px;
+  }
+  body footer .contact form textarea {
+    height: 80px;
+    margin-bottom: 45px;
+  }
+  body footer .contact form button {
+    border: none;
+    background: none;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    align-self: flex-end;
+    cursor: pointer;
+  }
+  body footer .contact form button::after {
+    content: "";
+    display: block;
+    width: 154px;
+    height: 2px;
+    margin-top: 8px;
+    background-color: #4EE1A0;
+  }
+  body footer .header-footer {
+    flex-direction: column;
+  }
+  body footer .header-footer::before {
+    content: "";
+    margin-bottom: 15px;
+    left: 2.5%;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background: white;
+  }
+  body footer .header-footer div {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+@media (min-width: 640px) {
+  body footer {
+    padding: 20px 120px;
+  }
+  body footer .contact {
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 10vw;
+  }
+  body footer .contact div {
+    align-items: center;
+  }
+  body footer .contact div h2 {
+    font-size: 55px;
+  }
+  body footer .contact div p {
+    text-align: center;
+  }
+  body footer .contact form textarea {
+    height: 100px;
+  }
+  body footer .header-footer::before {
+    margin-bottom: 15px;
+    left: 2.5%;
+    bottom: 0;
+    width: 90vw;
+    height: 2px;
+    background: white;
+  }
+}
+@media (min-width: 1024px) {
+  body footer {
+    padding: 20px 45px;
+  }
+  body footer .contact {
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    gap: 10vw;
+    align-items: start;
+  }
+  body footer .contact div {
+    align-items: start;
+  }
+  body footer .contact div h2 {
+    font-size: 45px;
+  }
+  body footer .contact div p {
+    text-align: start;
+  }
+  body footer .contact form {
+    margin-top: 35px;
+  }
+  body footer .contact form textarea {
+    height: 60px;
+  }
+}
+
+/*# sourceMappingURL=footer.css.map */

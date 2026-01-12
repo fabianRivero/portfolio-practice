@@ -1,0 +1,232 @@
+@use "mixins" as *;
+@use "breakpoints" as *;
+
+.projects {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 15px;
+
+    &:nth-last-child {
+        &::after {
+            content: "";
+            width: 0%;
+            height: 0px;
+        }
+    }
+
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+
+        h2 {
+            font-size: 40px;
+        }
+
+        a {
+            letter-spacing: 2px;
+            cursor: pointer;
+            @include underline(
+                $width: 115px,
+                $margin-top: 8px,
+            ) 
+        }
+    } 
+
+    article {
+        width: 100%;
+        padding-bottom: 20px;
+        
+        .nav-overlay { 
+            display: none; 
+        }
+        .nav-mobile  { 
+            display: block;
+        } 
+
+        img {
+            width: 100%;
+        }
+
+        h4 {
+            margin-top: 20px;
+            font-size: 25px;
+            margin-bottom: 0;
+            order: 2;
+        }
+
+        ul {
+            margin-bottom: 35px;
+            display: flex;
+            padding: 0;
+            gap: 20px;
+            order: 3;
+            li {
+                font-size: 18px;
+            }
+        }
+
+        .project-image {
+            order: 1;
+        }
+
+
+        .nav-container {
+            order: 4;
+            position: static;
+            opacity: 1;
+            pointer-events: auto;
+            background: none;
+            margin-top: 10px;
+        
+            nav {
+                display: flex;
+                flex-direction: row;
+                gap: 25px;
+
+                a {
+                    letter-spacing: 2px;
+                    @include underline(
+                        $width: 130px,
+                        $margin-top: 10px,
+                    );
+                    
+                    &:nth-of-type(2) {
+                        @include underline(
+                            $width: 100px,
+                            $margin-top: 10px,               
+                        )
+                    }
+                }
+            }
+        }
+    }
+
+    @include breakpoint($bp-sm){
+        padding: 30px 15px;
+
+        .projects-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5%;
+
+            article {
+                width: 47%;
+                padding-bottom: 40px;
+
+                h4 {
+                    margin-top: 10px;
+                    font-size: 19px;
+                    margin-bottom: 0;
+                }
+
+                ul {
+                    margin-bottom: 35px;
+                    display: flex;
+                    padding: 0;
+                    gap: 20px;
+
+                    li {
+                        font-size: 18px;
+                    }
+                }
+
+                nav {
+                    display: flex;
+                    flex-direction: row;
+                    gap: 25px;
+
+                    a {
+                        letter-spacing: 2px;
+                        @include underline(
+                            $width: 130px,
+                            $margin-top: 10px,
+                        );
+                        
+                        &:nth-of-type(2) {
+                            @include underline(
+                                $width: 100px,
+                                $margin-top: 10px,               
+                            )
+                        }
+                    }
+                }
+            }
+            
+        }
+    }
+
+    @include breakpoint($bp-md){
+        padding: 20px 40px;
+        padding-bottom: 200px;
+
+        header{
+            a {
+                padding-right: 10px;
+            }
+        }
+
+        .projects-container {
+            justify-content: center;
+
+            article {
+            width: 47%;
+            padding: 0;
+            margin: 0;
+
+            .nav-mobile { 
+                display: none; 
+            }
+            .nav-overlay { 
+                display: flex; 
+            }
+
+            ul {
+                padding: 0;
+                margin: 0;
+                margin-top: 15px;
+            }
+            }
+
+            .project-image {
+            position: relative;
+            overflow: hidden;
+            
+
+            img {
+                display: block;
+                width: 100%;
+                height: auto;
+                margin: 0;
+                padding: 0;
+            }
+
+            .nav-overlay {
+                position: absolute;
+                margin: 0;
+                inset: 0;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background: rgba(0,0,0,0.6);
+                opacity: 0;
+                pointer-events: none;
+                transition: opacity 0.3s ease;
+
+                nav {
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+                }
+            }
+
+            &:hover .nav-overlay {
+                opacity: 1;
+                pointer-events: auto;
+            }
+            }
+        }
+    }
+}

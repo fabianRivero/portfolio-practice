@@ -1,0 +1,167 @@
+@use "variables" as *;
+@use "mixins" as *;
+@use "breakpoints" as *;
+
+.presentation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 0;
+    padding-bottom: 80px;
+    position: relative;
+
+    .picture-wrap {
+        position: relative;
+        width: 190px;
+        margin-top: 40px;
+
+        &::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(0deg, #303030 0%, #151515 100%);
+            z-index: -2;
+        }
+
+        .picture {
+            display: block;
+            width: 100%;
+            position: relative;
+            z-index: 0;      
+            margin-top: 0;   
+            background: none; 
+        }
+
+        .picture-desktop {
+            display: none;
+        }
+    }
+    
+    div {
+        width: 90%;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        h1 {
+            font-size: 37px;
+            display: flex;
+            flex-direction: column;
+            z-index: 3;
+
+            & > span {
+                display: flex;
+                justify-content: center;
+                gap: 7px;
+                & > span {
+                    @include underline(
+                        $width: 215px,
+                        $height: 3px,
+                        $margin-top: 0px,
+                    );
+                }                
+            }
+        }
+
+        p {
+            width: 80%;
+            line-height: 24px;
+        }
+
+        a {
+            margin-top: 20px;
+            letter-spacing: 2px;
+        }
+    }
+
+    @include breakpoint($bp-sm){
+        flex-direction: row-reverse;
+        margin-right: -7px;
+        padding-top: 60px;
+        padding-left: 20px;
+        .picture-wrap {
+            width: 420px;
+            max-height: 300px;
+            margin: 0;
+
+            .picture {
+                max-height: 350px;
+            }
+        }
+
+        div {
+            width: 100%;
+            text-align: start;
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+
+            h1 {
+                font-size: 43px;
+                align-items: start;
+                & > span {
+                    justify-content: start;
+                    & > span {
+                        @include underline(
+                            $width: 250px,
+                        );
+                    }                
+                }
+            }
+
+            p {
+                width: 100%;
+                line-height: 24px;
+            }
+
+            a {
+                margin-top: 20px;
+                letter-spacing: 2px;
+                @include underline(
+                    $width: 115px
+                )
+            }
+        }
+    }
+
+    @include breakpoint($bp-md){
+
+        padding-left: 80px;
+
+        .picture-wrap {
+            max-height: 1000px;            
+            .picture {
+                display: none;
+            }
+
+            .picture-desktop {
+                display: block;
+                position: absolute;
+                right: 100px;
+                top: -260px;
+                width: 300px;
+            }
+        }
+        div {
+            h1 {
+               font-size: 67px;
+               margin-bottom: 20px;
+               margin-top: 20px;
+                & > span {
+                    & > span {
+                        @include underline(
+                            $width: 390px,
+                            $margin-top: 0px,
+                            $height: 3px,
+                        );
+                    }                
+                }
+            }
+
+            p {
+                width: 400px;
+            }
+        }
+    }
+}

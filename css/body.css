@@ -1,0 +1,144 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #151515;
+  color: #D9D9D9;
+  font-family: "Space Grotesk", sans-serif;
+}
+body .right-waves-desktop, body .left-waves2-desktop {
+  display: none;
+}
+body .background-image {
+  position: absolute;
+  z-index: -1;
+}
+body .background-image.half-circle {
+  top: 300px;
+  right: 0;
+  z-index: 2;
+}
+body .background-image.circle {
+  display: none;
+}
+body .background-image.left-waves1 {
+  left: -8px;
+  margin-top: 50px;
+}
+body .background-image.left-waves1-desktop {
+  display: none;
+}
+body .background-image.right-waves {
+  right: -8px;
+  top: -60px;
+  transform: scaleX(-1);
+}
+body .background-image.left-waves2 {
+  left: -20px;
+  bottom: 77px;
+  z-index: 2;
+}
+body a:hover {
+  color: #4EE1A0;
+}
+body a, body h3 {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+body a::after, body h3::after {
+  content: "";
+  display: block;
+  width: 120px;
+  height: 2px;
+  margin-top: 11px;
+  background-color: #4EE1A0;
+}
+body h1, body h2, body h3, body h4, body .tech-title {
+  color: white;
+}
+body main section {
+  position: relative;
+  padding: 60px 0px;
+}
+body main section::after {
+  content: "";
+  position: absolute;
+  left: 2.5%;
+  bottom: 0;
+  width: 95%;
+  height: 2px;
+  background: white;
+}
+body main section:last-of-type::after {
+  display: none;
+}
+body ul {
+  list-style: none;
+}
+body input, body textarea {
+  color: #D9D9D9;
+}
+@media (min-width: 640px) {
+  body .background-image.left-waves2 {
+    left: -110px;
+    bottom: 10px;
+  }
+  body main section::after {
+    width: 0%;
+    height: 0px;
+  }
+  body main section:first-of-type::after {
+    content: "";
+    position: absolute;
+    left: 2.5%;
+    bottom: 0;
+    width: 95%;
+    height: 2px;
+    background: white;
+  }
+}
+@media (min-width: 1024px) {
+  body .right-waves, body .left-waves2 {
+    display: none;
+  }
+  body .right-waves-desktop, body .left-waves2-desktop {
+    display: block;
+    z-index: 2;
+  }
+  body .right-waves-desktop {
+    transform: scaleX(-1);
+    right: -200px;
+    top: -80px;
+  }
+  body .left-waves2-desktop {
+    left: -300px;
+    bottom: 30px;
+  }
+  body main section:first-of-type::after {
+    left: 4%;
+    bottom: 0;
+    width: 90%;
+    height: 1px;
+  }
+  body .background-image.half-circle, body .background-image.left-waves1, body .background-image .right-waves, body .background-image .left-waves2 {
+    display: none;
+  }
+  body .background-image.left-waves1-desktop {
+    display: block;
+    width: 310px;
+    position: absolute;
+    left: 0;
+    top: 90px;
+  }
+  body .background-image.circle {
+    display: block;
+    position: absolute;
+    right: 330px;
+    top: 330px;
+    z-index: 2;
+  }
+}
+
+/*# sourceMappingURL=body.css.map */
