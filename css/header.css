@@ -38,12 +38,8 @@
   }
 }
 @media (min-width: 1024px) {
-  .header-footer.top {
-    width: 100%;
-    margin-left: 60px;
-  }
   .header-footer.top nav {
-    margin-right: 215px;
+    margin-right: 2vw;
   }
 }
 

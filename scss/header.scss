@@ -48,11 +48,8 @@
 
     @include breakpoint($bp-md) {
         &.top {
-            width: 100%;
-            margin-left: 60px;
-
             nav {
-                margin-right: 215px;
+                margin-right: 2vw;
             }
         }
     }
