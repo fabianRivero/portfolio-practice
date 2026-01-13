@@ -112,22 +112,22 @@ body input, body textarea {
     top: 320px;
     z-index: 2;
   }
-  body main section:first-of-type::after {
+  body section:first-of-type::after {
     left: 4%;
     bottom: 0;
     width: 90%;
     height: 1px;
   }
-  body main section .background-image.left-waves1, body main section .background-image .right-waves, body main section .background-image.left-waves2 {
+  body section .background-image.left-waves1, body section .background-image.left-waves2 {
     display: none;
   }
-  body main section .background-image.left-waves2-desktop {
+  body section .background-image.left-waves2-desktop {
     display: block;
     z-index: 2;
     bottom: 30px;
     left: -200px;
   }
-  body main section .background-image.left-waves1-desktop {
+  body section .background-image.left-waves1-desktop {
     display: block;
     width: 310px;
     position: absolute;

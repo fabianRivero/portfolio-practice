@@ -142,7 +142,7 @@ body {
             }
         }
 
-        main section {
+        section {
             &:first-of-type::after {
                 left: 4%;
                 bottom: 0;
@@ -151,7 +151,7 @@ body {
             }
 
             .background-image {
-                &.left-waves1, .right-waves, &.left-waves2 {
+                &.left-waves1, &.left-waves2 {
                     display: none;
                 }
 
