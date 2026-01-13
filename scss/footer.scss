@@ -33,7 +33,8 @@ body{
                 display: flex;
                 flex-direction: column;
                 gap: 5px;   
-                
+                width: 100%;
+
                 .field {
                     position: relative;
 
@@ -101,6 +102,13 @@ body{
         }
 
         .header-footer {
+            div {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 20px;
+            }
+                
             &::before {
                 content: "";
                 margin-bottom: 15px;
@@ -129,7 +137,6 @@ body{
                 form {
                     display: flex;
                     flex-direction: column;
-                    width: 100%;
                     gap: 5px;           
 
                     input, textarea {
@@ -167,6 +174,15 @@ body{
 
             .header-footer {
                 flex-direction: column;
+
+                div {
+                    flex-direction: row;
+                    gap: 20px;
+                    nav {
+                        margin-top: 20px;
+                    }
+                }
+
                 &::before {
                     content: "";
                     margin-bottom: 15px;

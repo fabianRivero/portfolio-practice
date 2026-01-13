@@ -8,19 +8,10 @@
 }
 .presentation .picture-wrap {
   position: relative;
-  width: 190px;
   margin-top: 40px;
-}
-.presentation .picture-wrap::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(0deg, #303030 0%, #151515 100%);
-  z-index: -2;
 }
 .presentation .picture-wrap .picture {
   display: block;
-  width: 100%;
   position: relative;
   z-index: 0;
   margin-top: 0;

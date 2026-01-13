@@ -3,12 +3,11 @@ html {
 }
 
 body {
+  margin: 0;
+  overflow-x: hidden;
   background-color: #151515;
   color: #D9D9D9;
   font-family: "Space Grotesk", sans-serif;
-}
-body .right-waves-desktop, body .left-waves2-desktop {
-  display: none;
 }
 body .background-image {
   position: absolute;
@@ -29,8 +28,11 @@ body .background-image.left-waves1 {
 body .background-image.left-waves1-desktop {
   display: none;
 }
+body .background-image.left-waves2-desktop {
+  display: none;
+}
 body .background-image.right-waves {
-  right: -8px;
+  right: 0px;
   top: -60px;
   transform: scaleX(-1);
 }
@@ -82,7 +84,7 @@ body input, body textarea {
 }
 @media (min-width: 640px) {
   body .background-image.left-waves2 {
-    left: -110px;
+    left: -120px;
     bottom: 10px;
   }
   body main section::after {
@@ -100,17 +102,12 @@ body input, body textarea {
   }
 }
 @media (min-width: 1024px) {
-  body .right-waves, body .left-waves2 {
+  body .left-waves2 {
     display: none;
   }
-  body .right-waves-desktop, body .left-waves2-desktop {
+  body .left-waves2-desktop {
     display: block;
     z-index: 2;
-  }
-  body .right-waves-desktop {
-    transform: scaleX(-1);
-    right: -200px;
-    top: -80px;
   }
   body .left-waves2-desktop {
     left: -300px;

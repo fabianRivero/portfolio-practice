@@ -7,13 +7,11 @@ html {
 }
 
 body {
+    margin: 0;
+    overflow-x: hidden;
     background-color: $background;
     color: $text-color;
     font-family: "Space Grotesk", sans-serif;
-
-    .right-waves-desktop, .left-waves2-desktop {
-        display: none;
-    }
 
     .background-image {
         position: absolute;
@@ -38,8 +36,12 @@ body {
             display: none;
         }
 
+        &.left-waves2-desktop {
+            display: none;
+        }
+
         &.right-waves {
-            right: -8px;
+            right: 0px;
             top: -60px;
             transform: scaleX(-1);
         }
@@ -100,7 +102,7 @@ body {
 
         .background-image {
             &.left-waves2 {
-                left: -110px;
+                left: -120px;
                 bottom: 10px;
             }
         }
@@ -124,19 +126,13 @@ body {
     }
 
     @include breakpoint($bp-md){
-        .right-waves, .left-waves2 {
+        .left-waves2 {
            display: none;
         }
 
-        .right-waves-desktop, .left-waves2-desktop {
+        .left-waves2-desktop {
            display: block;
            z-index: 2;
-        }
-
-        .right-waves-desktop {
-            transform: scaleX(-1);
-            right: -200px;
-            top: -80px;
         }
 
         .left-waves2-desktop {

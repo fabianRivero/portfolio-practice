@@ -27,6 +27,7 @@ body footer .contact form {
   display: flex;
   flex-direction: column;
   gap: 5px;
+  width: 100%;
 }
 body footer .contact form .field {
   position: relative;
@@ -87,6 +88,12 @@ body footer .contact form button::after {
   margin-top: 8px;
   background-color: #4EE1A0;
 }
+body footer .header-footer div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
 body footer .header-footer::before {
   content: "";
   margin-bottom: 15px;
@@ -113,7 +120,6 @@ body footer .header-footer::before {
   body footer .contact form {
     display: flex;
     flex-direction: column;
-    width: 100%;
     gap: 5px;
   }
   body footer .contact form input, body footer .contact form textarea {
@@ -151,6 +157,13 @@ body footer .header-footer::before {
   }
   body footer .header-footer {
     flex-direction: column;
+  }
+  body footer .header-footer div {
+    flex-direction: row;
+    gap: 20px;
+  }
+  body footer .header-footer div nav {
+    margin-top: 20px;
   }
   body footer .header-footer::before {
     content: "";
