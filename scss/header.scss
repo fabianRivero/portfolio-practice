@@ -48,8 +48,9 @@
 
     @include breakpoint($bp-md) {
         &.top {
+            padding-left: 80px;
             nav {
-                margin-right: 2vw;
+                margin-right: 8vw;
             }
         }
     }

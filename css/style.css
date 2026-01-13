@@ -178,8 +178,11 @@ body input, body textarea {
   }
 }
 @media (min-width: 1024px) {
+  .header-footer.top {
+    padding-left: 80px;
+  }
   .header-footer.top nav {
-    margin-right: 2vw;
+    margin-right: 8vw;
   }
 }
 
