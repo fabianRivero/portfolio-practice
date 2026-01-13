@@ -126,18 +126,20 @@ body {
     }
 
     @include breakpoint($bp-md){
-        .left-waves2 {
-           display: none;
-        }
-
-        .left-waves2-desktop {
-           display: block;
-           z-index: 2;
-        }
-
-        .left-waves2-desktop {
-            left: -300px;
-            bottom: 30px;
+        main {
+            .background-image {
+                &.half-circle {
+                    display: none;
+                }
+                
+                &.circle {
+                    display: block;
+                    position: absolute;
+                    right: 320px;
+                    top: 320px;
+                    z-index: 2;
+                }
+            }
         }
 
         main section {
@@ -147,27 +149,26 @@ body {
                 width: 90%;
                 height: 1px;
             }
-        }
 
-        .background-image {
-            &.half-circle, &.left-waves1, .right-waves, .left-waves2 {
-                display: none;
-            }
+            .background-image {
+                &.left-waves1, .right-waves, &.left-waves2 {
+                    display: none;
+                }
 
-            &.left-waves1-desktop{
-                display: block;
-                width: 310px;
-                position: absolute;
-                left: 0;
-                top: 90px;
-            }
+                &.left-waves2-desktop {
+                    display: block;
+                    z-index: 2;
+                    bottom: 30px;
+                    left: -200px;
+                }
 
-            &.circle {
-                display: block;
-                position: absolute;
-                right: 330px;
-                top: 330px;
-                z-index: 2;
+                &.left-waves1-desktop{
+                    display: block;
+                    width: 310px;
+                    position: absolute;
+                    left: 0;
+                    top: 90px;
+                }
             }
         }
     }

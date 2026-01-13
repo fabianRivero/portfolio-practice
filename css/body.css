@@ -102,16 +102,15 @@ body input, body textarea {
   }
 }
 @media (min-width: 1024px) {
-  body .left-waves2 {
+  body main .background-image.half-circle {
     display: none;
   }
-  body .left-waves2-desktop {
+  body main .background-image.circle {
     display: block;
+    position: absolute;
+    right: 320px;
+    top: 320px;
     z-index: 2;
-  }
-  body .left-waves2-desktop {
-    left: -300px;
-    bottom: 30px;
   }
   body main section:first-of-type::after {
     left: 4%;
@@ -119,22 +118,21 @@ body input, body textarea {
     width: 90%;
     height: 1px;
   }
-  body .background-image.half-circle, body .background-image.left-waves1, body .background-image .right-waves, body .background-image .left-waves2 {
+  body main section .background-image.left-waves1, body main section .background-image .right-waves, body main section .background-image.left-waves2 {
     display: none;
   }
-  body .background-image.left-waves1-desktop {
+  body main section .background-image.left-waves2-desktop {
+    display: block;
+    z-index: 2;
+    bottom: 30px;
+    left: -200px;
+  }
+  body main section .background-image.left-waves1-desktop {
     display: block;
     width: 310px;
     position: absolute;
     left: 0;
     top: 90px;
-  }
-  body .background-image.circle {
-    display: block;
-    position: absolute;
-    right: 330px;
-    top: 330px;
-    z-index: 2;
   }
 }
 
